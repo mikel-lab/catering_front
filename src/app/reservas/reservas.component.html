@@ -2,7 +2,7 @@
 <div class="container text-center" style="width: 30%;">
   <h1>Haz tu pedido ahora</h1>
   <br><br>
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="exampleFormControlInput1">Nombre:</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre">
@@ -22,14 +22,36 @@
   <div class="form-group">
     <label for="exampleFormControlSelect2">Menú:</label>
     <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option *ngFor="let menu of menus">{{menu.nombre}}</option>
     </select>
   </div>
   <br>
-  <button type="button" class="btn btn-secondary">Enviar Reserva</button>
+  <button type="reset" class="btn btn-secondary">Enviar Reserva</button>
 </form>
+
+<br><br>
+
+<h2>Estas son tus reservas</h2>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Edita o borra tus pedidos</div>
+      <div class="panel-body">
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          <option *ngFor="let reserva of reservas">ID del menú: {{reserva.id_menu}}. Estado: {{reserva.estado}} </option>
+          
+        </select>
+      </div>
+      <br>
+      <button 
+      
+      type="button" class="btn btn-primary">Cambiar</button>
+      &nbsp
+      <button 
+      
+      type="button" class="btn btn-primary">Borrar</button>
+    </div>
 </div>
+
+<!--
+  (click)="BorrarReservas(reservas)"
+  (click)="ActualizarReservas(oreserva,reservas)"-->

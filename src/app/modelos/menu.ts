@@ -10,6 +10,6 @@ export class IMenu{
 
          Ingredientes_menu: string;
 
-         Id_reserva: number
+         Id_reserva: number;
     
 }

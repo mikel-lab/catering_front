@@ -1,30 +1,39 @@
-
 <div class="container">
-<header class="jumbotron my-3">
-  <h1 class="display-3">Nuestra selección de carnes</h1>
-  <p class="lead">
-    Selección de las mejores carnes cocinadas a la brasa de leña en la parrilla pionera de Euskadi.
-    Acompañadas de nuestras guarniciones, salsas y entrantes típicos junto a una amplia selección de vinos de Esukadi. 
-    También ofrecemos menús para vegetarianos y celíacos. 
-  </p>
-  
-</header> 
+  <header class="jumbotron my-3">
+    <h1 class="display-3">Nuestra selección de carnes</h1>
+    <p class="lead">
+      Selección de las mejores carnes cocinadas a la brasa de leña en la parrilla pionera de Euskadi.
+      Acompañadas de nuestras guarniciones, salsas y entrantes típicos junto a una amplia selección de vinos de Esukadi.
+      También ofrecemos menús para vegetarianos y celíacos.
+    </p>
 
+  </header>
 
-<div class="col-md-4" *ngFor="let carne of carnes">
-  <div class="card mb-4 shadow-sm" >
-    <img src="assets/img/hero_1.jpg"  width="100%" height="225">
-    <div class="card-body">
-      <p class="card-text">{{carne.Ingredientes_menu}}</p>
-      
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4" *ngFor="let carne of carnes">
+          <div class="card mb-4 shadow-sm">
+            <img src="assets/img/{{carne.foto}}.jpg" width="100%" height="225">
+            <div class="card-body">
+              <h3 class="card-text">{{carne.nombre}}</h3>
+              <p class="card-text">Id del menú: {{carne.id}}</p>
+              <p class="card-text">{{carne.ingredientes_menu}}</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="col-md-4">
 
 
 
-<!--
+    <!--
 <div class="album py-5 bg-light">
   <div class="container">
 
@@ -63,4 +72,5 @@
 </div>
 -->
 
-</div>
+
+  </div>
